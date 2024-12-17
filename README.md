@@ -1,13 +1,39 @@
 # Most Frequent Numbers
 
-A Java program that finds the most frequent numbers in an input text file and displays the numbers together with their frequency. Frequency is defined as the number of times a number is repeated in the text file.
+This Java program analyzes numbers from a text file to determine the most frequently occurring numbers and their frequencies.
 
-The program is written using functions, in a modular way.
+## Features
 
-* loadNumbers: Loads numbers from the text file to an integer array
-  * Method Input: Input filename, e.g., “data1.txt”
-  * Method Output: Integer array which stores all the numbers in the input text file
-  
-* computeFrequency: Computes the frequencies of numbers from 0 to 999. Assumes that numbers in the text file are in the range of [0,999]. For example, if the frequency array position 102 is 9, i.e., frequency[102]=9, it means that number 102 is repeated 9 times in the input text file.
-  * Method Input: Numbers array
-  * Method Output: Frequency array
+- **Number Loading**: Reads numbers from a specified text file.
+- **Frequency Calculation**: Calculates the frequency of numbers in the range **0 to 999**.
+- **Most Frequent Numbers**: Identifies and displays the numbers with the highest frequencies.
+
+## Usage
+
+1. **Prepare the Input File**: Create a text file containing the numbers to be analyzed (e.g., `data2.txt`).
+2. **Run the Program**: Execute the main class `MostFrequentNumbers` to display the results in the console.
+
+## Methods
+
+- **`loadNumbers(String inputFile)`**: Loads numbers from the specified file and returns them as an integer array.
+- **`computeFrequency(int[] numbers)`**: Computes the frequency of numbers and returns a frequency array.
+- **`mostFrequent(int[] frequency)`**: Finds and prints the numbers with the highest frequencies.
+
+## Example
+
+Assume the `data2.txt` file contains the following:
+23 45 23 67 23 45
+
+### Output
+
+When the program runs, it will produce the following output:
+
+MOST FREQUENT NUMBERS: Number: 23, Frequency: 3 Number: 45, Frequency: 2
+
+## Requirements
+
+- **Java 8** or higher.
+
+## Contributing
+
+Contributions are welcome! Please open an issue first to discuss any changes or improvements.
