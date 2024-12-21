@@ -1,39 +1,117 @@
 # Most Frequent Numbers
 
-This Java program analyzes numbers from a text file to determine the most frequently occurring numbers and their frequencies.
+A simple Java program that reads integer values from a text file (`.txt`), stores them in an array, calculates their frequencies, and then prints out the number(s) with the highest frequency.
+
+## About
+
+This repository includes:
+- A **file I/O** routine to load integers from a text file line by line.
+- A **frequency computation** method that counts occurrences of each integer.
+- A **reporting** step that identifies and prints the most frequently appearing number(s) along with their frequency.
+
+It serves as a clear example of **basic Java file handling**, **array manipulation**, and **simple statistical analysis** in a straightforward console application.
+
+---
+
+## Table of Contents
+
+1. [Features](#features)  
+2. [Project Structure](#project-structure)  
+3. [Usage](#usage)  
+4. [How It Works](#how-it-works)  
+5. [Contributing](#contributing)  
+6. [License](#license)
+
+---
 
 ## Features
 
-- **Number Loading**: Reads numbers from a specified text file.
-- **Frequency Calculation**: Calculates the frequency of numbers in the range **0 to 999**.
-- **Most Frequent Numbers**: Identifies and displays the numbers with the highest frequencies.
+- **File Loading**  
+  - Uses a two-pass approach to determine the number of lines, then reads and converts each line to an integer.  
+  - Gracefully handles `FileNotFoundException` by printing an error message and exiting.
+
+- **Frequency Calculation**  
+  - Maintains an integer array (e.g., `int[1000]`) to count how many times each number appears.  
+  - Assumes numbers fall within a certain range (0–999).  
+
+- **Most Frequent Number**  
+  - Identifies the maximum frequency value.  
+  - Prints all numbers matching that frequency (in case of ties).
+
+---
+
+## Project Structure
+
+```
+.
+└── MostFrequentNumbers.java    # Main class with file I/O, frequency computation, and reporting
+└── data2.txt                   # Example input file containing one integer per line
+```
+
+---
 
 ## Usage
 
-1. **Prepare the Input File**: Create a text file containing the numbers to be analyzed (e.g., `data2.txt`).
-2. **Run the Program**: Execute the main class `MostFrequentNumbers` to display the results in the console.
+1. **Compile**  
+   ```bash
+   javac MostFrequentNumbers.java
+   ```
 
-## Methods
+2. **Run**  
+   ```bash
+   java OOP.MostFrequentNumbers
+   ```
+   - If your code is in a package named `OOP`, ensure you run it from the correct directory structure, e.g.,  
+     ```bash
+     java OOP.MostFrequentNumbers
+     ```
+   - Otherwise, remove the `package OOP;` line or adjust your classpath accordingly.
 
-- **`loadNumbers(String inputFile)`**: Loads numbers from the specified file and returns them as an integer array.
-- **`computeFrequency(int[] numbers)`**: Computes the frequency of numbers and returns a frequency array.
-- **`mostFrequent(int[] frequency)`**: Finds and prints the numbers with the highest frequencies.
+3. **Check Output**  
+   - The program prints “File is available” if `data2.txt` is found.  
+   - It then displays all numbers that share the highest frequency and their corresponding frequency count.
 
-## Example
+4. **Customize**  
+   - Update the file name `"data2.txt"` in `main()` if you want to process a different input file.  
+   - Adjust the array size `frequency[1000]` if your data range is larger than 0–999.
 
-Assume the `data2.txt` file contains the following:
-23 45 23 67 23 45
+---
 
-### Output
+## How It Works
 
-When the program runs, it will produce the following output:
+1. **Loading the File**  
+   - `loadNumbers()` checks how many lines the file has, then reads each line into an integer array.  
+   - Exits gracefully if the file is not found.
 
-MOST FREQUENT NUMBERS: Number: 23, Frequency: 3 Number: 45, Frequency: 2
+2. **Computing Frequency**  
+   - `computeFrequency()` initializes an array (e.g., `int[] frequency = new int[1000];`) to count each integer’s occurrences.  
+   - Increments `frequency[value]` for each integer in the array.
 
-## Requirements
+3. **Finding Most Frequent**  
+   - `mostFrequent()` scans through the frequency array to find the maximum value.  
+   - Prints all integers with that frequency.
 
-- **Java 8** or higher.
+4. **Main Flow**  
+   - `main()` ties everything together:
+     1. Loads the numbers from `data2.txt`.
+     2. Computes their frequency.
+     3. Prints the most frequent number(s).
+
+---
 
 ## Contributing
 
-Contributions are welcome! Please open an issue first to discuss any changes or improvements.
+1. **Fork** this repository to your own GitHub account.  
+2. **Clone** your fork locally and create a **branch** for your feature/fix.  
+3. **Commit** and **push** changes to your branch.  
+4. **Open a Pull Request** describing your modifications.
+
+---
+
+## License
+
+This project does not include a default license. If you choose an open-source license (e.g., MIT), create a `LICENSE` file at the root and reference it here.
+
+---
+
+Enjoy identifying the most common numbers in your dataset! If you have any questions or suggestions, feel free to open an issue in this repository.
