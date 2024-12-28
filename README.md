@@ -110,7 +110,7 @@ It serves as a clear example of **basic Java file handling**, **array manipulati
 
 ## License
 
-This project does not include a default license. If you choose an open-source license (e.g., MIT), create a `LICENSE` file at the root and reference it here.
+This project is licensed under the MIT License. See the `LICENSE` file for details.
 
 ---
 
