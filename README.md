@@ -114,4 +114,10 @@ This project is licensed under the MIT License. See the `LICENSE` file for detai
 
 ---
 
+## Author
+
+Developed by [Elif Pulukçu](https://github.com/elifpulukcu).
+
+---
+
 Enjoy identifying the most common numbers in your dataset! If you have any questions or suggestions, feel free to open an issue in this repository.
